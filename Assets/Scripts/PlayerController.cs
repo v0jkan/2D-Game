@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rigidbody2d;
     public float speed;
+    public GameObject GameWonPanel;
 
     void Start()
     {
@@ -38,9 +39,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Finish")
+        if (GameWonPanel != null)
         {
-            Debug.Log("Level Completed!");
+            GameWonPanel.SetActive(true);
         }
     }
 }
